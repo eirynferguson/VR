@@ -17,7 +17,7 @@ public class PedestrianRoute : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Rigidbody rb = GetComponent<Rigidbody>(); 
+        rb = GetComponent<Rigidbody>();  
 
         wps = new List<Transform>();
         GameObject wp;

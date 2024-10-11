@@ -122,6 +122,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!54 &11060508 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 1972840471227516798, guid: 39a7e4bb1554aaf4c8a003b4ea6c0f35, type: 3}
+  m_PrefabInstance: {fileID: 5365635020090305980}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &24225902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2219,6 +2224,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e9789330385f7945b892131188e750e, type: 3}
+--- !u!54 &905352865 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 1972840471227516798, guid: 39a7e4bb1554aaf4c8a003b4ea6c0f35, type: 3}
+  m_PrefabInstance: {fileID: 995867712}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &965676640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2294,6 +2304,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8347776096081887919, guid: 39a7e4bb1554aaf4c8a003b4ea6c0f35, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 905352865}
     - target: {fileID: 1506637036079012992, guid: 39a7e4bb1554aaf4c8a003b4ea6c0f35, type: 3}
       propertyPath: m_Name
       value: Pedestrian (1)
@@ -4704,6 +4718,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8347776096081887919, guid: 39a7e4bb1554aaf4c8a003b4ea6c0f35, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 11060508}
     - target: {fileID: 1506637036079012992, guid: 39a7e4bb1554aaf4c8a003b4ea6c0f35, type: 3}
       propertyPath: m_Name
       value: Pedestrian
