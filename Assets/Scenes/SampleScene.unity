@@ -868,6 +868,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 331554132}
+  - component: {fileID: 331554133}
   m_Layer: 0
   m_Name: Traffic Lights
   m_TagString: Untagged
@@ -893,6 +894,18 @@ Transform:
   - {fileID: 84077100}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &331554133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331554131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c2d7b1ad3e9f848bfae1fbe4b043f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &371414198 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2761784063978902507, guid: c1800acf6366418a9b5f610249000331, type: 3}
