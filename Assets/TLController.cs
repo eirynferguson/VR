@@ -39,7 +39,25 @@ public class TLController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //function to decrease the stateTime by time.DeltaTime, and, when it falls below zero, change the state to change the lights and reset the time
+        //when it falls below zero change the state to change the lights and reset the time
+
+        float temp = stateTimer;
+        stateTimer = stateTimer - Time.deltaTime;
+
+        if (stateTimer < 0)
+        {
+            if (state == 1)
+            {
+                state = 0;
+            }
+            else
+            {
+                state = 1;
+            }
+
+            stateTimer = temp;
+        }
+
     }
 
     void SetState(int c)
@@ -47,21 +65,21 @@ public class TLController : MonoBehaviour
         state = c;
         if (c == 1)
         {
-            t1green.active = true;
-            t1red.active = false;
-            t2green.active = false;
-            t2red.active = true;
-            t3green.active = false;
-            t3red.active = true;
+            t1green.SetActive(true);
+            t1red.SetActive(false);
+            t2green.SetActive(false);
+            t2red.SetActive(true);
+            t3green.SetActive(false);
+            t3red.SetActive(true);
         }
         else
         {
-            t1green.active = false;
-            t1red.active = true;
-            t2green.active = true;
-            t2red.active = false;
-            t3green.active = true;
-            t3red.active = false;
+            t1green.SetActive(false);
+            t1red.SetActive(true);
+            t2green.SetActive(true);
+            t2red.SetActive(false);
+            t3green.SetActive(true);
+            t3red.SetActive(false);
         }
     }
 }
