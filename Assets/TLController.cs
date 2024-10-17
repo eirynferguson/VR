@@ -41,7 +41,6 @@ public class TLController : MonoBehaviour
     {
         //when it falls below zero change the state to change the lights and reset the time
 
-        float temp = stateTimer;
         stateTimer = stateTimer - Time.deltaTime;
 
         if (stateTimer < 0)
@@ -49,15 +48,16 @@ public class TLController : MonoBehaviour
             if (state == 1)
             {
                 state = 0;
+                SetState(0);
+                stateTimer = 10.0f;
             }
             else
             {
                 state = 1;
+                SetState(1);
+                stateTimer = 10.0f;
             }
-
-            stateTimer = temp;
         }
-
     }
 
     void SetState(int c)
