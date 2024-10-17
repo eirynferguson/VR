@@ -77,12 +77,11 @@ public class CarController : MonoBehaviour
         //calculate velocity for this frame
         Vector3 velocity = displacement;
         velocity.Normalize();
-        velocity *= 2.5f;
+        velocity *= 6.5f;
 
         //apply velocity
         Vector3 newPosition = transform.position;
         newPosition += velocity * Time.deltaTime;
-        //Rigidbody rb = GetComponent<Rigidbody>();
         rb.MovePosition(newPosition);
 
         //align to velocity
@@ -104,7 +103,7 @@ public class CarController : MonoBehaviour
     
 
         //initialise position and waypoint counter
-        transform.position = new Vector3(route[0].position.x, 0.0f, route[0].position.z);
+        transform.position = new Vector3(route[0].position.x, 0.6f, route[0].position.z);
         targetWP = 1;
     }
 }
