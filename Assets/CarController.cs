@@ -11,6 +11,7 @@ public class CarController : MonoBehaviour
     public float dist;
     public bool go = false;
     public float initialDelay;
+    public bool isColliding = false;
 
     Rigidbody rb;
 
@@ -40,9 +41,15 @@ public class CarController : MonoBehaviour
         wp = GameObject.Find("CarWP6");
         wps.Add(wp.transform);
 
+        /*wp = GameObject.Find("CarWP7");
+        wps.Add(wp.transform);
+        
+         wp = GameObject.Find("CarWP8");
+        wps.Add(wp.transform);*/
+
         SetRoute();
 
-        initialDelay = Random.Range(2.0f, 12.0f);
+        initialDelay = Random.Range(3.0f, 12.0f);
         transform.position = new Vector3(0.0f, -5.0f, 0.0f);
     }
 
@@ -105,5 +112,15 @@ public class CarController : MonoBehaviour
         //initialise position and waypoint counter
         transform.position = new Vector3(route[0].position.x, 0.6f, route[0].position.z);
         targetWP = 1;
+    }
+
+   void OnTriggerEnter()
+    {
+        
+    }
+
+    void OnTriggerExit()
+    {
+
     }
 }
