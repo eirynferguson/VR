@@ -12,6 +12,7 @@ public class CarController : MonoBehaviour
     public bool go = false;
     public float initialDelay;
     public bool isColliding = false;
+    public Vector3 velocity;
 
     Rigidbody rb;
 
@@ -35,13 +36,13 @@ public class CarController : MonoBehaviour
         wp = GameObject.Find("CarWP4");
         wps.Add(wp.transform);
 
-        wp = GameObject.Find("CarWP5");
+        /*wp = GameObject.Find("CarWP5");
         wps.Add(wp.transform);
 
         wp = GameObject.Find("CarWP6");
         wps.Add(wp.transform);
 
-        /*wp = GameObject.Find("CarWP7");
+        wp = GameObject.Find("CarWP7");
         wps.Add(wp.transform);
         
          wp = GameObject.Find("CarWP8");
@@ -81,10 +82,21 @@ public class CarController : MonoBehaviour
             }
         }
 
-        //calculate velocity for this frame
-        Vector3 velocity = displacement;
-        velocity.Normalize();
-        velocity *= 6.5f;
+        if (isColliding == true)
+        {
+            //calculate velocity for this frame
+            velocity = displacement;
+            velocity.Normalize();
+            velocity *= 0f;
+        }
+        else
+        {
+            //calculate velocity for this frame
+            velocity = displacement;
+            velocity.Normalize();
+            velocity *= 6.5f;
+        }
+        
 
         //apply velocity
         Vector3 newPosition = transform.position;
@@ -104,9 +116,9 @@ public class CarController : MonoBehaviour
 
         //set the route waypoints
         if (routeNumber == 0) route = new List<Transform>
-            { wps[0], wps[1], wps[2] };
+            { wps[0], wps[1] };
         else if (routeNumber == 1) route = new List<Transform>
-            { wps[3], wps[4], wps[5] };
+            { wps[2], wps[3] };
     
 
         //initialise position and waypoint counter
@@ -114,13 +126,15 @@ public class CarController : MonoBehaviour
         targetWP = 1;
     }
 
-   void OnTriggerEnter()
-    {
-        
-    }
+   void OnTriggerEnter(Collider other)
+   {
+        isColliding = true; 
 
-    void OnTriggerExit()
-    {
+   }
 
+    void OnTriggerExit(Collider other)
+    {
+        isColliding = false;
+        velocity *= 6.5f;
     }
 }
