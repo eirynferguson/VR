@@ -36,7 +36,7 @@ public class CarController : MonoBehaviour
         wp = GameObject.Find("CarWP4");
         wps.Add(wp.transform);
 
-        /*wp = GameObject.Find("CarWP5");
+        wp = GameObject.Find("CarWP5");
         wps.Add(wp.transform);
 
         wp = GameObject.Find("CarWP6");
@@ -45,8 +45,14 @@ public class CarController : MonoBehaviour
         wp = GameObject.Find("CarWP7");
         wps.Add(wp.transform);
         
-         wp = GameObject.Find("CarWP8");
-        wps.Add(wp.transform);*/
+        wp = GameObject.Find("CarWP8");
+        wps.Add(wp.transform);
+
+        wp = GameObject.Find("CarWP9");
+        wps.Add(wp.transform);
+
+        wp = GameObject.Find("CarWP10");
+        wps.Add(wp.transform);
 
         SetRoute();
 
@@ -112,14 +118,22 @@ public class CarController : MonoBehaviour
     void SetRoute()
     {
         //randomise the next route
-        routeNumber = Random.Range(0, 2);
+        routeNumber = Random.Range(0, 5);
 
         //set the route waypoints
         if (routeNumber == 0) route = new List<Transform>
             { wps[0], wps[1] };
         else if (routeNumber == 1) route = new List<Transform>
             { wps[2], wps[3] };
-    
+        else if (routeNumber == 2) route = new List<Transform>
+            {wps[0], wps[7], wps[6] };
+        else if (routeNumber == 3) route = new List<Transform>
+            { wps[3], wps[8], wps[7], wps [6] };
+        else if (routeNumber == 4) route = new List<Transform>
+            { wps[5], wps[4], wps[1]};
+       else if (routeNumber == 5) route = new List<Transform>
+            { wps[5], wps[4], wps[9], wps[3]};
+
 
         //initialise position and waypoint counter
         transform.position = new Vector3(route[0].position.x, 0.6f, route[0].position.z);
