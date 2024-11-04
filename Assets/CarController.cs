@@ -54,6 +54,12 @@ public class CarController : MonoBehaviour
         wp = GameObject.Find("CarWP10");
         wps.Add(wp.transform);
 
+        wp = GameObject.Find("CarWP11");
+        wps.Add(wp.transform);
+
+        wp = GameObject.Find("CarWP12");
+        wps.Add(wp.transform);
+
         SetRoute();
 
         initialDelay = Random.Range(3.0f, 12.0f);
@@ -118,7 +124,7 @@ public class CarController : MonoBehaviour
     void SetRoute()
     {
         //randomise the next route
-        routeNumber = Random.Range(0, 5);
+        routeNumber = Random.Range(0, 6);
 
         //set the route waypoints
         if (routeNumber == 0) route = new List<Transform>
@@ -126,11 +132,11 @@ public class CarController : MonoBehaviour
         else if (routeNumber == 1) route = new List<Transform>
             { wps[2], wps[3] };
         else if (routeNumber == 2) route = new List<Transform>
-            {wps[0], wps[7], wps[6] };
+            {wps[0], wps[11], wps[7], wps[6] };
         else if (routeNumber == 3) route = new List<Transform>
             { wps[3], wps[8], wps[7], wps [6] };
         else if (routeNumber == 4) route = new List<Transform>
-            { wps[5], wps[4], wps[1]};
+            { wps[5], wps[4], wps[10], wps[1]};
        else if (routeNumber == 5) route = new List<Transform>
             { wps[5], wps[4], wps[9], wps[3]};
 
