@@ -62,7 +62,7 @@ public class CarController : MonoBehaviour
 
         SetRoute();
 
-        initialDelay = Random.Range(3.0f, 12.0f);
+        initialDelay = Random.Range(5.0f, 12.0f);
         transform.position = new Vector3(0.0f, -5.0f, 0.0f);
     }
 
@@ -106,7 +106,7 @@ public class CarController : MonoBehaviour
             //calculate velocity for this frame
             velocity = displacement;
             velocity.Normalize();
-            velocity *= 6.5f;
+            velocity *= 5.5f;
         }
         
 
@@ -155,6 +155,5 @@ public class CarController : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         isColliding = false;
-        velocity *= 6.5f;
     }
 }
