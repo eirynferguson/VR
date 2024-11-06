@@ -134,7 +134,7 @@ public class CarController : MonoBehaviour
         else if (routeNumber == 2) route = new List<Transform>
             {wps[0], wps[11], wps[7], wps[6] };
         else if (routeNumber == 3) route = new List<Transform>
-            { wps[3], wps[8], wps[7], wps [6] };
+            { wps[2], wps[8], wps[7], wps [6] };
         else if (routeNumber == 4) route = new List<Transform>
             { wps[5], wps[4], wps[10], wps[1]};
        else if (routeNumber == 5) route = new List<Transform>
